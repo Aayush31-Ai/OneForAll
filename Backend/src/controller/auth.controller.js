@@ -59,7 +59,10 @@ export const loginController = async (req, res) => {
 
     res.status(200).json({
       success: true,
-      user: existingUser,
+      user:{
+        email:existingUser.email,
+        id:existingUser._id
+      },
     });
   } catch (error) {
     console.log(error);
